@@ -1,13 +1,15 @@
 from argparse import ArgumentParser
 from datetime import datetime
-from tabulate import tabulate
+from rich.console import Console
+from rich.table import Table
 import json
 
 def main():
     database = load_database()
+    list_tasks(database)
 
     parser = ArgumentParser(description="Task Tracker CLI")
-    parser.add_argument("command", choices=["add", "update"], help="Action to perform")
+    parser.add_argument("command", choices=["add", "update", "list"], help="Action to perform")
     parser.add_argument("--id", type=int, help="Task ID to update (for 'update')")
     parser.add_argument("--description", help="Description of the task")
     parser.add_argument("--status", choices=["todo", "in progress", "done"], help="New status for the task (for 'update')")
@@ -28,6 +30,9 @@ def main():
         else:
             update_task(database, args.id, args.description, args.status)
             save_database(database)
+    elif args.command == "list":
+        list_tasks(database)
+
 
 
 def load_database():
@@ -66,6 +71,29 @@ def update_task(database, id, description=None, status=None):
         print(f"Task {id} updated successfully!")
     else:
         print(f"Task with ID {id} does not exist.")
+
+def list_tasks(database):
+    table = Table(title="Task List")
+
+    table.add_column("ID", style="cyan")
+    table.add_column("Description", style="magenta")
+    table.add_column("Status", style="bold")
+    table.add_column("Created At", style="dim")
+    table.add_column("Updated At", style="dim")
+
+    for task_id, task in database.items():
+        status_color = "red" if task["status"] == "todo" else "yellow" if task["status"] == "in progress" else "green"
+        table.add_row(
+            task_id,
+            task["description"],
+            f"[{status_color}]{task['status']}[/{status_color}]",
+            task["created_at"],
+            task["updated_at"]
+        )
+    
+    console = Console()
+    console.print(table)
+
 
 
 if __name__ == "__main__":
