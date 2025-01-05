@@ -33,8 +33,6 @@ def main():
     elif args.command == "list":
         list_tasks(database)
 
-
-
 def load_database():
     try:
         with open('tasks.json', 'r') as file:
@@ -93,7 +91,16 @@ def list_tasks(database):
     
     console = Console()
     console.print(table)
-
+def delete_task(database, task_id):
+    """Delete a task from the database."""
+    task_id = str(task_id)  
+    
+    if task_id in database:
+        del database[task_id]  
+        print(f"Task {task_id} deleted successfully.")
+        save_database(database)  
+    else:
+        print(f"Task with ID {task_id} does not exist.")
 
 
 if __name__ == "__main__":
