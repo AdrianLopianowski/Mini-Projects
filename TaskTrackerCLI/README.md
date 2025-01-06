@@ -2,11 +2,14 @@
 
 A simple Command Line Interface (CLI) tool to manage your tasks. This tool allows users to add, update, delete, and list tasks, while also marking tasks with various statuses such as "todo", "in-progress", or "done".
 
-GitHub Repository: [Task Tracker CLI - GitHub](https://github.com/AdrianLopianowski/Mini-Projects/tree/main/TaskTrackerCLI)
+## Project URL
+- [Task Tracker on Roadmap](https://roadmap.sh/projects/task-tracker)
 
-project url: https://roadmap.sh/projects/task-tracker
+## GitHub Repository
+- [Task Tracker CLI - GitHub](https://github.com/AdrianLopianowski/Mini-Projects/tree/main/TaskTrackerCLI)
 
 ## Features
+
 
 - **Add tasks**: Add a new task with a description.
 - **Update tasks**: Update a task's description and status.
