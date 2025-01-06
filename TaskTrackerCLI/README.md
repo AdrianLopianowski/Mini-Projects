@@ -1,7 +1,9 @@
 # Task Tracker CLI
 
 A simple Command Line Interface (CLI) tool to manage your tasks. This tool allows users to add, update, delete, and list tasks, while also marking tasks with various statuses such as "todo", "in-progress", or "done".
-project url: https://roadmap.sh/projects/task-tracker
+
+GitHub Repository: [Task Tracker CLI - GitHub](https://github.com/AdrianLopianowski/Mini-Projects/tree/main/TaskTrackerCLI)
+
 ## Features
 
 - **Add tasks**: Add a new task with a description.
@@ -9,6 +11,7 @@ project url: https://roadmap.sh/projects/task-tracker
 - **Delete tasks**: Remove a task from the task list.
 - **List tasks**: View all tasks or filter by status (todo, in progress, done).
 - **Color-coded status**: Task status is color-coded when listed in the terminal.
+
 
 ## Task Properties
 
@@ -41,32 +44,32 @@ To update the description of an existing task:
 
 python task_cli.py update --id 1 --description "Buy groceries and cook dinner"
 
-Mark a task as in progress or done
+###Mark a task as in progress or done
 To mark a task as "in progress" or "done":
 
 python task_cli.py update --id 1 --status "in progress"
 python task_cli.py update --id 1 --status "done"
 
 
-Delete a task
+###Delete a task
 To delete a task by its ID:
 
 python task_cli.py delete --id 1
 
-List all tasks
+###List all tasks
 To list all tasks:
 
 python task_cli.py list
 
 
-List tasks by status
+###List tasks by status
 To list tasks by specific statuses (todo, in progress, done):
 
 python task_cli.py list todo
 python task_cli.py list in-progress
 python task_cli.py list done
 
-Files
+###Files
 task_cli.py: Main script to handle the CLI functionality.
 tasks.json: JSON file where tasks are stored.
 
