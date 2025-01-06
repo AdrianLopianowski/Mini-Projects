@@ -4,6 +4,8 @@ A simple Command Line Interface (CLI) tool to manage your tasks. This tool allow
 
 GitHub Repository: [Task Tracker CLI - GitHub](https://github.com/AdrianLopianowski/Mini-Projects/tree/main/TaskTrackerCLI)
 
+project url: https://roadmap.sh/projects/task-tracker
+
 ## Features
 
 - **Add tasks**: Add a new task with a description.
